@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'rexml'
+gem 'flickraw'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -47,6 +48,8 @@ group :development do
 end
 
 group :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'capybara'
   gem 'webdrivers', '~> 4.6.0', require: false
 end
