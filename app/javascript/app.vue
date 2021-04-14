@@ -7,7 +7,7 @@
     </section>
     <ul v-if="images">
       <li v-for="i in images" :key="i.id">
-        <img :src="'https://live.staticflickr.com/' + i.server + '/' + i.id + '_' + i.secret + '_q.jpg'" @click="passToModal(i)">
+        <img :src="'https://live.staticflickr.com/' + i.server + '/' + i.id + '_' + i.secret + '_q.jpg'" @click="passImageToModal(i)">
       </li>
     </ul>
     <ImageModal v-bind:image="selectedImage" v-if="showModal" @close="showModal = false" />
@@ -38,7 +38,7 @@ export default {
       this.searchQuery = ''
       this.images = []
     },
-    passToModal: function (i) {
+    passImageToModal: function (i) {
       this.selectedImage = i
       this.showModal = true
     }
