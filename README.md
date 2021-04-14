@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# An image search app using Flickr API
 
-Things you may want to cover:
+## Instructions
 
-* Ruby version
+### Configure environment variables
 
-* System dependencies
+Create an .env file and copy contents from example-env
 
-* Configuration
+e.g.
 
-* Database creation
+`cp example-env .env`
 
-* Database initialization
 
-* How to run the test suite
+### Config app for development
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle install`
 
-* Deployment instructions
 
-* ...
+* Set up the database
+
+`rails db:create`
+
+The database is not used. It was only created in order to deploy to heroku
+
+* Fire the app
+
+`rails s`
+
+* Run tests
+
+`rails spec`
