@@ -21,7 +21,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'rexml'
-gem 'flickraw'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
