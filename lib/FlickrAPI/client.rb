@@ -27,8 +27,13 @@ module FlickrAPI
       uri.query = URI.encode_www_form(params.merge(extra_params))
       response_body = JSON.parse(Net::HTTP.get_response(uri).body)
 
+      extract_values(response_body)
+    end
+
+    def extract_values(response_body)
       if response_body['stat'] == 'fail'
         Rails.logger.error("Flickr error! Code: #{response_body['code']}, message: #{response_body['message']}")
+        return {}
       end
 
       response_body['photos']['photo']
