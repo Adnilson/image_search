@@ -3,14 +3,14 @@ class ImagesController < ApplicationController
   end
 
   def search
-    @photos = flickr.photos.search(text: params[:text])
+    @photos = flickr_api.photos_search(params[:text])
 
     render json: @photos
   end
 
   private
 
-  def flickr
-    @flickr ||= FlickRaw::Flickr.new
+  def flickr_api
+    @flickr_api ||= FlickrAPI::Client.new
   end
 end
